@@ -18,6 +18,12 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']   # Allows Railway URL
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-b7a90.up.railway.app',
+    'https://*.up.railway.app'
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -134,3 +140,5 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
