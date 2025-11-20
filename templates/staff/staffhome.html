@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color: var(--primary-color); margin-bottom: 30px;">Staff Dashboard</h1>
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📚</div>
+<div class="stat-value">{{ enrolled_count }}</div>
+<div class="stat-label">Enrolled Events</div></div>
+<div class="stat-card"><div class="stat-icon">👤</div>
+<div class="stat-value">{{ student.studentid }}</div>
+<div class="stat-label">Staff ID</div></div>
+<div class="stat-card"><div class="stat-icon">📖</div>
+<div class="stat-value">{{ student.department }}</div>
+<div class="stat-label">Department</div></div>
+<div class="stat-card"><div class="stat-icon">📅</div>
+<div class="stat-value">{{ student.semester }}</div>
+<div class="stat-label">Semester</div></div>
+</div>
+<div class="row">
+<div class="col-md-6"><div class="card">
+<div class="card-header"><h3 class="card-title">Quick Actions</h3></div>
+<div style="padding: 20px;">
+<a href="{% url 'staff_events' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Browse Available Events</a>
+<a href="{% url 'staff_schedule' %}" class="btn btn-success" style="width: 100%;">View My Events</a>
+</div></div></div>
+<div class="col-md-6"><div class="card">
+<div class="card-header"><h3 class="card-title">Staff Information</h3></div>
+<div style="padding: 20px;">
+<p><strong>Name:</strong> {{ student.fullname }}</p>
+<p><strong>Email:</strong> {{ student.email }}</p>
+<p><strong>Contact:</strong> {{ student.contact }}</p>
+<p><strong>Program:</strong> {{ student.program }}</p>
+</div></div></div>
+</div>{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-header"><h2 class="card-title">Available Events</h2></div>
+  {% if courses %}
+  <div class="row">
+    {% for course in courses %}
+    <div class="col-md-6">
+      <div class="card" style="margin-bottom: 20px;">
+        <div style="padding: 20px;">
+          <h3>{{ course.coursetitle }}</h3>
+          <p><strong>Code:</strong> {{ course.coursecode }}</p>
+          <p><strong>Department:</strong> {{ course.department }}</p>
+          <p><strong>Session:</strong> {{ course.semester }}</p>
+          <p><strong>Duration (credits):</strong> {{ course.credits }}</p>
+          <a href="{% url 'staff_join_event' course.id %}" class="btn btn-primary">Join Event</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state"><div class="empty-state-text">No available events</div></div>
+  {% endif %}
+</div>
+{% endblock %}

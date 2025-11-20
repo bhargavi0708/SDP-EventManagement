@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title text-center">About ECSA</h1>
+    </div>
+    <div>
+        <p style="font-size: 18px; margin-bottom: 30px; text-align: center;">
+            Event Coordination and Scheduling Application
+        </p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">System Overview</h3>
+                <p>ECSA centralizes event planning, staff scheduling, and coordinator workflows so every program stays on track.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Key Objectives</h3>
+                <ul style="line-height: 2;">
+                    <li>End-to-end event planning</li>
+                    <li>Frictionless staff scheduling</li>
+                    <li>Coordinated logistics oversight</li>
+                    <li>Actionable admin insights</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">System Roles</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h4>👨‍💼 Admin</h4>
+                        <p>Manage students, instructors, courses, and system settings</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h4>👨‍🎓 Staff</h4>
+                        <p>Review assignments, confirm availability, and track event updates</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h4>👨‍🏫 Event Coordinator</h4>
+                        <p>Manage assigned events, monitor staff coverage, and confirm readiness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="{% url 'login' %}" class="btn btn-primary">Get Started</a>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

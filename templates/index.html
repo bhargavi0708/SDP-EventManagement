@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title text-center">Welcome to the Event Coordination & Scheduling Hub</h1>
+    </div>
+    <div style="text-align: center;">
+        <p style="font-size: 18px; margin-bottom: 30px; color: #555;">
+            Coordinate events, assign staff, and keep every schedule on track in one centralized workspace.
+        </p>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>For Staff</h3>
+                    <p>Review your assignments, confirm availability, and stay synced with live event plans.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon">🗂️</div>
+                    <h3>For Event Coordinators</h3>
+                    <p>Plan logistics, monitor coverage, and react quickly to scheduling changes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon">🛠️</div>
+                    <h3>For Admins</h3>
+                    <p>Oversee every event, coordinator, and staff assignment with real-time visibility.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <a href="{% url 'login' %}" class="btn btn-primary" style="font-size: 18px; padding: 15px 40px;">
+                Get Started – Sign In
+            </a>
+        </div>
+        
+        <div style="margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">Platform Highlights</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>✓ Event Planning</h4>
+                    <p>Create event timelines, assign coordinators, and capture venue details.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>✓ Staff Scheduling</h4>
+                    <p>Assign team members to roles, avoid conflicts, and confirm coverage.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>✓ Coordinator Dashboards</h4>
+                    <p>Monitor readiness, attendance, and real-time updates.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>✓ Admin Insights</h4>
+                    <p>Gain full control across events, teams, and performance metrics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

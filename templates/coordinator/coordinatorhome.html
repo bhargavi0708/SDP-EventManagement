@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color: var(--primary-color); margin-bottom: 30px;">Event Coordinator Dashboard</h1>
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📚</div>
+<div class="stat-value">{{ courses_count }}</div>
+<div class="stat-label">Assigned Events</div></div>
+<div class="stat-card"><div class="stat-icon">👤</div>
+<div class="stat-value">{{ instructor.instructorid }}</div>
+<div class="stat-label">Event Coordinator ID</div></div>
+<div class="stat-card"><div class="stat-icon">🎓</div>
+<div class="stat-value">{{ instructor.qualification }}</div>
+<div class="stat-label">Qualification</div></div>
+<div class="stat-card"><div class="stat-icon">💼</div>
+<div class="stat-value">{{ instructor.designation }}</div>
+<div class="stat-label">Designation</div></div>
+</div>
+<div class="card">
+<div class="card-header"><h3 class="card-title">My Events</h3></div>
+<div style="padding: 20px;">
+<a href="{% url 'coordinator_events' %}" class="btn btn-primary">View All My Events</a>
+</div></div>{% endblock %}
+

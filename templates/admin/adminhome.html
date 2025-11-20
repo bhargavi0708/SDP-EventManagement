@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="fade-in">
+    <h1 style="color: var(--primary-color); margin-bottom: 30px;">Admin Dashboard</h1>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">👨‍🎓</div>
+            <div class="stat-value">{{ total_students }}</div>
+            <div class="stat-label">Total Staff Members</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">👨‍🏫</div>
+            <div class="stat-value">{{ total_instructors }}</div>
+            <div class="stat-label">Total Event Coordinators</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-value">{{ total_courses }}</div>
+            <div class="stat-label">Total Events</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div class="stat-value">{{ total_enrollments }}</div>
+            <div class="stat-label">Total Assignments</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Actions - Staff Members</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <a href="{% url 'admin_staff_add' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Add New Staff</a>
+                    <a href="{% url 'admin_staff_list' %}" class="btn btn-secondary" style="width: 100%;">View All Staff Members</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Actions - Event Coordinators</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <a href="{% url 'admin_coordinator_add' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Add New Event Coordinator</a>
+                    <a href="{% url 'admin_coordinator_list' %}" class="btn btn-secondary" style="width: 100%;">View All Event Coordinators</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Actions - Events</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <a href="{% url 'admin_event_add' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Add New Event</a>
+                    <a href="{% url 'admin_event_list' %}" class="btn btn-secondary" style="width: 100%;">View All Events</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Actions - Assignments</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <a href="{% url 'admin_assignments' %}" class="btn btn-primary" style="width: 100%;">View All Assignments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

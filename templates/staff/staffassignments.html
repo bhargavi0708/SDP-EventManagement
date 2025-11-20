@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-header"><h2 class="card-title">My Scheduled Events</h2></div>
+  <div style="margin-bottom: 20px;">
+    <a href="{% url 'staff_events' %}" class="btn btn-primary">Browse More Events</a>
+  </div>
+  {% if enrollments %}
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr><th>Event Code</th><th>Event Title</th><th>Department</th><th>Scheduled On</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        {% for enrollment in enrollments %}
+        <tr>
+          <td>{{ enrollment.course.coursecode }}</td>
+          <td>{{ enrollment.course.coursetitle }}</td>
+          <td>{{ enrollment.course.department }}</td>
+          <td>{{ enrollment.enrollment_date|date:"Y-m-d" }}</td>
+          <td>{{ enrollment.grade|default:"Pending" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty-state"><div class="empty-state-text">You have no scheduled events yet</div></div>
+  {% endif %}
+</div>
+{% endblock %}

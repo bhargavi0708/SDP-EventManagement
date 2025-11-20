@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card"><div class="card-header"><h2 class="card-title">All Events</h2></div>
+<div style="margin-bottom: 20px;"><a href="{% url 'admin_event_add' %}" class="btn btn-primary">Add New Event</a></div>
+<div class="table-container"><table>
+<thead><tr><th>Event Code</th><th>Event Title</th><th>Department</th><th>Academic Year</th>
+<th>Semester</th><th>Credits</th><th>Actions</th></tr></thead>
+<tbody>{% for course in courses %}
+<tr><td>{{ course.coursecode }}</td><td>{{ course.coursetitle }}</td>
+<td>{{ course.department }}</td><td>{{ course.academicyear }}</td>
+<td>{{ course.semester }}</td><td>{{ course.credits }}</td>
+<td><a href="{% url 'admin_event_edit' course.id %}" class="btn btn-warning btn-sm">Edit</a>
+<a href="{% url 'admin_event_delete' course.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a></td></tr>
+{% empty %}<tr><td colspan="7" class="empty-state">No events found</td></tr>
+{% endfor %}</tbody></table></div></div>{% endblock %}
+
